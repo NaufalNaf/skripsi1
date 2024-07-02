@@ -16,8 +16,11 @@ gender = st.selectbox('Gender', ('Female', 'Male'))
 gender_num = 0 if gender == 'Female' else 1
 
 # Prediksi
-input_data = np.array([[height, weight, gender_num]])
-prediction = model.predict(input_data)
+if st.button('Predict'):
+    st.write("Button clicked.")
+    input_data = np.array([[height, weight, gender_num]])
+    prediction = clf.predict(input_data)
+    st.write("Prediction made.")
 
 # Tampilkan hasil
 obesity_level = ['Extremely Weak','weak','Normal', 'Overweight', 'Obese','Extremely Obese']
